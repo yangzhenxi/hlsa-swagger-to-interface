@@ -250,7 +250,6 @@ class ServiceGenerator {
 
   protected classNameList: ControllerType[] = [];
 
-  protected version: string;
 
   protected mappings: MappingItemType[] = [];
 
@@ -267,9 +266,7 @@ class ServiceGenerator {
       ...config,
     };
     this.openAPIData = openAPIData;
-    const { info } = openAPIData;
     const basePath = '';
-    this.version = info.version;
     Object.keys(openAPIData.paths || {}).forEach((p) => {
       const pathItem: PathItemObject = openAPIData.paths[p];
       ['get', 'put', 'post', 'delete', 'patch'].forEach((method) => {

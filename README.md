@@ -3,11 +3,11 @@
 更改了template里的controller模板  让他支持vben格式
 ## 使用
 ```node
-npm i --save-dev @umijs/openapi
+npm i --save-dev hlsa-swagger-to-interface
 ```
 在项目根目录新建 ```openapi.config.ts```
 ```ts
-const { generateService } = require('@umijs/openapi')
+const { generateService } = require('hlsa-swagger-to-interface')
 
 generateService({
   schemaPath: 'http://petstore.swagger.io/v2/swagger.json',

@@ -1,6 +1,6 @@
 const openAPI = require('../dist/index');
 
 openAPI.generateService({
-  schemaPath: './swagger.json',
+  schemaPath: 'https://petstore.swagger.io/v2/swagger.json',
   serversPath: './servers',
 });
