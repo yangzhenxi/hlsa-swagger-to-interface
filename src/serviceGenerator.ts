@@ -305,7 +305,6 @@ class ServiceGenerator {
       });
     });
   }
-
   public genFile() {
     const basePath = this.config.serversPath || './src/service';
     try {
@@ -346,13 +345,14 @@ class ServiceGenerator {
           ...tp,
         },
       );
+    console.log('tp :>> ', tp);
       prettierError.push(hasError);
     });
-
     if (prettierError.includes(true)) {
       Log(`🚥 格式化失败，请检查 service 文件内可能存在的语法错误`);
     }
     // 生成 index 文件
+    console.log('this.classNameList :>> ', this.classNameList);
     this.genFileFromTemplate(`index.ts`, 'serviceIndex', {
       list: this.classNameList,
       disableTypeCheck: false,
