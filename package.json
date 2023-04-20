@@ -4,7 +4,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:chenshuai2144/openapi2typescript.git"
+    "url": "https://github.com/yangzhenxi/hlsa-swagger-to-interface"
   },
   "license": "MIT",
   "author": "chenshuai2144",
