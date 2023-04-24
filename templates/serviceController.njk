@@ -1,5 +1,6 @@
 // @ts-ignore
 /* eslint-disable */
+import { RequestOptions } from '/#/axios'
 {{ requestImportStatement }}
 
 {% for api in list -%}
@@ -56,6 +57,7 @@ export async function {{ api.functionName }}(
 {%- endfor -%}
 {%- endif -%}
 {{ "," if api.body or api.hasParams or api.file }}
+  requestOptions?: RequestOptions,
   options {{ "?: {[key: string]: any}" if genType === "ts" }}
 ) {
   {% if api.params and api.params.path -%}
@@ -126,6 +128,8 @@ export async function {{ api.functionName }}(
     {%- endif %}
     {%- endif %}
     ...(options || {}),
+  },{
+    ...requestOptions,
   })
 }
 
