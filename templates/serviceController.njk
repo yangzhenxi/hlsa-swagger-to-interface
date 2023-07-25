@@ -99,7 +99,7 @@ export async function {{ api.functionName }}(
   {% endif -%}
 
   return request.{{api.method}}{{ ("<" + api.response.type + ">") | safe if genType === "ts" }}({
-     url:'{{ api.path | safe }}',
+     url:`{{ api.path | safe }}`,
        {%- if api.params and api.hasParams %}
     params: {
       {%- for query in api.params.query %}
